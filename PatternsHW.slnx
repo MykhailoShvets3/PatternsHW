@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="AbstractFactory/AbstractFactory.csproj" />
+  <Project Path="Builder/Builder.csproj" />
+  <Project Path="Decorator/Decorator.csproj" />
+  <Project Path="FactoryMethodAdapter/FactoryMethodAdapter.csproj" />
+  <Project Path="Mediator/Mediator.csproj" />
+  <Project Path="PrototypeFigure/PrototypeFigure.csproj" />
+</Solution>
