@@ -1,9 +1,7 @@
 ﻿// Завдання 3. Шаблон "Посередник"
 //  я додав клас ConcreteColleague3, який надсилає повідомлення "Hello!"
 //  в ConcreteMediator додано третього колегу (поле і властивість Colleague3)
-//  метод Send у посереднику переписано: повідомлення тепер отримують
-//  усі колеги, крім того, хто його надіслав, бо раніше колег було тільки двоє.
-//  в Main додано створення c3 і відправку "Hello!"
+//  метод Send переписав: повідомлення тепер отримують усі колеги, крім того, хто його надіслав, бо раніше колег було тільки двоє
 using System;
 using System.Collections;
 
@@ -24,9 +22,10 @@ namespace Mediator.Examples
             m.Colleague2 = c2;
             m.Colleague3 = c3;
 
+            m.Send("Hello!", c3);
             m.Send("How are you?", c1);
             m.Send("Fine, thanks", c2);
-            m.Send("Hello!", c3); 
+           
 
             Console.Read();
         }
