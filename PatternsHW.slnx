@@ -1,8 +1,8 @@
 <Solution>
-  <Project Path="AbstractFactory/AbstractFactory.csproj" />
-  <Project Path="Builder/Builder.csproj" />
-  <Project Path="Decorator/Decorator.csproj" />
-  <Project Path="FactoryMethodAdapter/FactoryMethodAdapter.csproj" />
-  <Project Path="Mediator/Mediator.csproj" />
-  <Project Path="PrototypeFigure/PrototypeFigure.csproj" />
+  <Project Path="AbstractFactory/AbstractFactory.csproj" Id="5fcc073b-b4b0-48f8-b6da-39aa9d4c4ab9" />
+  <Project Path="Builder/Builder.csproj" Id="f246f897-6895-43f8-8b68-4034c8440e79" />
+  <Project Path="Decorator/Decorator.csproj" Id="7b5baaa6-62e2-4f98-ad71-c64424526a70" />
+  <Project Path="FactoryMethodAdapter/FactoryMethodAdapter.csproj" Id="413f2dcb-d665-4cd0-ae32-fd58b4c438b5" />
+  <Project Path="Mediator/Mediator.csproj" Id="a39b9042-d28e-472b-a925-44ae8276074b" />
+  <Project Path="PrototypeFigure/PrototypeFigure.csproj" Id="87d8d193-d50d-4cec-8257-8f06433d6978" />
 </Solution>

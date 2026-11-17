@@ -1,4 +1,4 @@
-﻿// Завдання 4. Шаблон "Декоратор" - ялинка.
+﻿// Завдання 4. Шаблон "Декоратор" (Decorator) - ялинка.
 using System;
 using System.Text;
 
@@ -8,32 +8,34 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.UTF8; 
+            Console.OutputEncoding = Encoding.UTF8;
 
-        
-            Console.WriteLine("1. Проста ялинка:");
-            Tree tree = new ChristmasTree();
-            tree.Show();
-            tree.Light();
+            Random rnd = new Random();
+            string[] ornaments = { "кульки", "зірка", "цукерки", "сніжинки", "дощик" };
 
-           
-            Console.WriteLine("\n2. Ялинка з прикрасами:");
-            tree = new OrnamentsDecorator(new ChristmasTree(), "кульки, зірка, цукерки");
-            tree.Show();
-            tree.Light();
+            // робимо 5 ялинок, кожна прикрашається випадково
+            for (int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine("Ялинка " + i + ":");
+                Tree tree = new ChristmasTree();
 
-           
-            Console.WriteLine("\n3. Ялинка з гірляндою:");
-            tree = new GarlandDecorator(new ChristmasTree());
-            tree.Show();
-            tree.Light();
+                // випадково: або є прикраси, або нема 
+                if (rnd.Next(2) == 1)
+                {
+                    string ornament = ornaments[rnd.Next(ornaments.Length)];
+                    tree = new OrnamentsDecorator(tree, ornament);
+                }
 
-          
-            Console.WriteLine("\n4. Ялинка з прикрасами і гірляндою:");
-            tree = new GarlandDecorator(
-                new OrnamentsDecorator(new ChristmasTree(), "кульки, зірка, цукерки"));
-            tree.Show();
-            tree.Light();
+                // випадково: або є гірлянда, або нема
+                if (rnd.Next(2) == 1)
+                {
+                    tree = new GarlandDecorator(tree);
+                }
+
+                tree.Show();
+                tree.Light();
+                Console.WriteLine();
+            }
 
             Console.ReadKey();
         }
@@ -44,7 +46,6 @@ namespace Decorator
     {
         public abstract void Show();
 
-       
         public virtual void Light()
         {
             Console.WriteLine("Ялинка не світиться.");
@@ -99,7 +100,7 @@ namespace Decorator
         }
     }
 
-    // ConcreteDecoratorB - гірлянда (додаємо поведінку: ялинка світиться)
+    // ConcreteDecoratorB - гірлянда 
     class GarlandDecorator : TreeDecorator
     {
         public GarlandDecorator(Tree tree)
